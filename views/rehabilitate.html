@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Relocate - The Paws Adoption Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="A1_Q8_Stylesheet.css">
+    <link rel="icon" href="titleIMG.png">
+  </head>
+
+  <body>
+    <div class="MainBody">
+      <div class="header">
+        <header>
+          <table>
+            <tr>
+              <td><a href="Home.html"><img class="headerImage" src="logo.png" alt="CAT AND DOG"></a></td>
+              <td class="headerTitle" id="headerText">The Paws Adoption Center<br>
+                <span class="headerSubtitle">Finding Forever Homes, One Paw at a Time</span>
+              </td>
+            </tr>
+          </table>
+          <div id="dateTime"></div>
+        </header>
+      </div>
+      <div class="sideMenu">
+        <p class="menu">Paw Menu</p>
+        <a href="Home.html">Home</a>
+        <a href="create_account.html">Create an Account</a> 
+        <a href="login.html">Log In</a> 
+        <a href="Pets.html">Browse Available Pets</a> 
+        <a href="Find_DOG_CAT.html">Find a Dog/Cat</a>
+        <a href="Dog_Care.html">Dog Care</a>
+        <a href="Cat_Care.html">Cat Care</a>
+        <a href="rehabilitate.html">Have a pet to give away?</a>
+        <a href="Contact_Us.html">Contact Us</a>
+      </div>
+      <div class="content" id="giveForm">
+        <p class="contentHeader">Rehome your pet</p>
+        <img class="contentImageFloatRight" src="adopt.jpg" alt="Relocating a pet">
+        <form id="givePetForm">
+          <label class="contentText">Is your pet a Dog or a Cat</label>
+          <br><br>
+          <input type="radio" class="contentText" id="givePetDog" name="givePet" value="dog">
+          <label for="givePetDog">Dog</label>
+          <br>
+          <input type="radio" class="contentText" id="givePetCat" name="givePet" value="cat">
+          <label for="givePetCat">Cat</label>
+          <br><br><br>
+          <label class="contentText">Please specify the breed</label>
+          <br><br>
+          <input type="radio" class="contentText" id="giveBreedInput" name="giveBreed" value="input">
+          <label for="giveBreedInput">Please specify: </label><input type="text" id="breedInput">
+          <br>
+          <input type="radio" class="contentText" id="giveBreedMix" name="giveBreed" value="mix">
+          <label for="giveBreedMix">Mix breed</label>
+          <br><br><br>
+          <label class="contentText">What is their age range</label>
+          <br><br>
+          <select name="giveAge" class="formDropdown" id="ageSelect">
+            <option value="" selected hidden disabled>Select here.</option>
+            <option value="0to3">0 to 3 years</option>
+            <option value="4to7">4 to 7 years</option>
+            <option value="8to11">8 to 11 years</option>
+            <option value="12to15">12 to 15 years</option>
+            <option value="16plus">16 years and higher</option>
+          </select>
+          <br><br><br>
+          <label class="contentText">Please select the gender</label>
+          <br><br>
+          <input type="radio" class="contentText" id="giveGenderMale" name="giveGender" value="male">
+          <label for="giveGenderMale">Male</label>
+          <br>
+          <input type="radio" class="contentText" id="giveGenderFemale" name="giveGender" value="female">
+          <label for="giveGenderFemale">Female</label>
+          <br>
+          <input type="radio" class="contentText" id="giveGenderNone" name="giveGender" value="none">
+          <label for="giveGenderNone">No preference</label>
+          <br><br><br>
+          <label class="contentText">Select the best that describe your pet</label>
+          <br><br>
+          <input type="checkbox" class="contentText" id="giveCharacteristicDogs" name="giveCharacteristic" value="dogs">
+          <label for="giveCharacteristicDogs">Dog-friendly</label>
+          <br>
+          <input type="checkbox" class="contentText" id="giveCharacteristicCats" name="giveCharacteristic" value="cats">
+          <label for="giveCharacteristicCats">Cat-friendly</label>
+          <br>
+          <input type="checkbox" class="contentText" id="giveCharacteristicChildren" name="giveCharacteristic" value="children">
+          <label for="giveCharacteristicChildren">Children-friendly</label>
+          <br><br><br>
+          <label class="contentText">Should The Paws Adoption Center be aware of anything specific</label>
+          <br><br>
+          <input class="formTextInput" type="text" placeholder="If yes, type here.">
+          <br><br><br>
+          <label class="contentText">Please provide the following details</label>
+          <br><br>
+          <label class="contentText contentTextSmall">Name: </label><input type="text" id="nameInput">
+          <br>
+          <label class="contentText contentTextSmall">Email: </label><input type="email" id="emailInput">
+          <br><br><br>
+          <button type="submit" id="submit" name="submit">Submit</button>
+          <button type="reset" id="reset" name="reset">Reset</button>
+        </form>
+        <div id="error-message" style="color:red;"></div>
+      </div>
+      <div class="footer">
+        <footer>
+          <p><a href="Disclaimer.html">Privacy & Disclaimer Statement</a>. SOEN 287 SUMMER II.</p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function updateDateTime() {
+          var now = new Date();
+          var dateString = now.toLocaleDateString();
+          var timeString = now.toLocaleTimeString();
+          document.getElementById('dateTime').textContent = dateString + ' ' + timeString;
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime(); // Initial call to set the date and time immediately
+
+      document.getElementById('givePetForm').addEventListener('submit', function(event) {
+    let errorMessage = '';
+    const givePet = document.querySelector('input[name="givePet"]:checked');
+    const giveBreedInput = document.getElementById('breedInput').value.trim();
+    const giveBreed = document.querySelector('input[name="giveBreed"]:checked');
+    const ageSelect = document.getElementById('ageSelect').value;
+    const giveGender = document.querySelector('input[name="giveGender"]:checked');
+    const emailInput = document.getElementById('emailInput').value.trim();
+    const nameInput = document.getElementById('nameInput').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+
+    const characteristics = document.querySelectorAll('input[name="giveCharacteristic"]:checked');
+
+    if (!givePet) {
+        errorMessage += 'Please select a pet type.\n';
+    }
+
+    if (giveBreed && giveBreed.value === 'input' && giveBreedInput === '') {
+        errorMessage += 'Please specify the breed.\n';
+    }
+
+    if (!giveBreed) {
+        errorMessage += 'Please select a breed preference.\n';
+    }
+
+    if (!ageSelect) {
+        errorMessage += 'Please select an age range.\n';
+    }
+
+    if (!giveGender) {
+        errorMessage += 'Please select a gender preference.\n';
+    }
+
+    if (characteristics.length === 0) {
+        errorMessage += 'Please select at least one characteristic that describes your pet.\n';
+    }
+
+    if (nameInput === '') {
+        errorMessage += 'Please enter your name.\n';
+    }
+
+    if (emailInput === '' || !emailPattern.test(emailInput)) {
+        errorMessage += 'Please enter a valid email address.\n';
+    }
+
+    if (errorMessage) {
+        event.preventDefault();
+        alert(errorMessage); // Display the popup with the error messages
+    }
+});
+
+    </script>
+  </body>
+</html>

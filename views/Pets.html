@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Browse Available Pets - The Paws Adoption Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="A1_Q8_Stylesheet.css">
+    <link rel="icon" href="titleIMG.png">
+ 
+</head>
+<body>
+    <div class="MainBody">
+        <div class="header">
+            <header>
+                <table>
+                    <tr>
+                        <td><a href="Home.html"><img class="headerImage" src="logo.png" alt="CAT AND DOG"></a></td>
+                        <td class="headerTitle" id="headerText">The Paws Adoption Center<br>
+                            <span class="headerSubtitle">Finding Forever Homes, One Paw at a Time</span>
+                        </td>
+                    </tr>
+                </table>
+                <div id="dateTime"></div> <!-- Date and Time Display -->
+            </header>
+        </div>
+        <div class="sideMenu">
+            <p class="menu">Paw Menu</p>
+            <a href="Home.html">Home</a>
+            <a href="create_account.html">Create an Account</a> 
+            <a href="login.html">Log In</a> 
+            <a href="Pets.html">Browse Available Pets</a> 
+            <a href="Find_DOG_CAT.html">Find a Dog/Cat</a>
+            <a href="Dog_Care.html">Dog Care</a>
+            <a href="Cat_Care.html">Cat Care</a>
+            <a href="rehabilitate.html">Have a pet to give away?</a>
+            <a href="Contact_Us.html">Contact Us</a>
+          </div>
+        
+        <div class="content">
+            <p class="contentHeader">Paws Available for Adoption</p>
+            
+            <div class="pet">
+                <img src="pet1.jpg" alt="Pet 1">
+                <div class="pet-info">
+                    <h3>Fluffy</h3>
+                    <p><strong>Breed:</strong> Labrador Retriever</p>
+                    <p><strong>Age:</strong> 3 years</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p><strong>Description:</strong> Fluffy is a playful and friendly Labrador who loves to play fetch. She is great with kids and other pets.</p>
+                </div>
+                <button type="button">Interested</button>
+            </div>
+
+            <div class="pet">
+                <img src="pet2.jpg" alt="Pet 2">
+                <div class="pet-info">
+                    <h3>Whiskers</h3>
+                    <p><strong>Breed:</strong> Siamese</p>
+                    <p><strong>Age:</strong> 2 years</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Description:</strong> Whiskers is a curious and intelligent Siamese cat who enjoys exploring new places. He is calm and loves to cuddle.</p>
+                </div>
+                <button type="button">Interested</button>
+            </div>
+
+         
+            <div class="pet">
+                <img src="pet3.jpg" alt="Pet 3">
+                <div class="pet-info">
+                    <h3>Buddy</h3>
+                    <p><strong>Breed:</strong> Golden Retriever</p>
+                    <p><strong>Age:</strong> 4 years</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Description:</strong> Buddy is a gentle and loyal Golden Retriever. He loves outdoor activities and is very good with children.</p>
+                </div>
+                <button type="button">Interested</button>
+            </div>
+
+            <div class="pet">
+                <img src="pet4.jpg" alt="Pet 4">
+                <div class="pet-info">
+                    <h3>Luna</h3>
+                    <p><strong>Breed:</strong> Persian</p>
+                    <p><strong>Age:</strong> 1 year</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p><strong>Description:</strong> Luna is a sweet and affectionate Persian cat. She enjoys quiet time and loves being petted.</p>
+                </div>
+                <button type="button">Interested</button>
+            </div>
+
+            <!-- Additional pets can be added here -->
+        </div>
+        <div class="footer">
+            <footer>
+                <p><a href="Disclaimer.html">Privacy & Disclaimer Statement</a>. SOEN 287 SUMMER II.</p>
+            </footer>
+        </div>
+    </div>
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var dateString = now.toLocaleDateString();
+            var timeString = now.toLocaleTimeString();
+            document.getElementById('dateTime').textContent = dateString + ' ' + timeString;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call to set the date and time immediately
+    </script>
+</body>
+</html>

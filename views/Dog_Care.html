@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dog Care - The Paws Adoption Center</title>
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="A1_Q8_Stylesheet.css">
+    <!-- Favicon for the webpage -->
+    <link rel="icon" href="titleIMG.png">
+  </head>
+
+  <body>
+    <div class="MainBody">
+      <!-- HEADER SECTION -->
+      <div class="header">
+        <header>
+          <table>
+            <tr>
+              <!-- Logo and link to Home page -->
+              <td><a href="Home.html"><img class="headerImage" src="logo.png" alt="CAT AND DOG"></a></td>
+              <!-- Main title and subtitle of the website -->
+              <td class="headerTitle" id="headerText">The Paws Adoption Center<br>
+                <span class="headerSubtitle">Finding Forever Homes, One Paw at a Time</span>
+              </td>
+            </tr>
+          </table>
+          <div id="dateTime"></div> <!-- Date and Time Display -->
+        </header>
+      </div>
+      <!-- SIDE MENU SECTION -->
+      <div class="sideMenu">
+        <p class="menu">Paw Menu</p>
+        <a href="Home.html">Home</a>
+        <a href="create_account.html">Create an Account</a> 
+        <a href="login.html">Log In</a> 
+        <a href="Pets.html">Browse Available Pets</a> 
+        <a href="Find_DOG_CAT.html">Find a Dog/Cat</a>
+        <a href="Dog_Care.html">Dog Care</a>
+        <a href="Cat_Care.html">Cat Care</a>
+        <a href="rehabilitate.html">Have a pet to give away?</a>
+        <a href="Contact_Us.html">Contact Us</a>
+      </div>
+      <!-- MAIN CONTENT SECTION -->
+      <div class="content">
+        <p class="contentHeader">Parenting A Dog</p>
+        <!-- Image of a dog aligned to the right -->
+        <img class="contentImageFloatRight" src="dog.jpg" alt="Golden retriever">
+        <!-- Text content providing dog care tips -->
+        <p class="contentText">
+          Bringing a dog into your home is a joyous and rewarding experience. Here are some essential tips to ensure your new furry friend thrives.
+        </p>
+        <!-- List of dog care tips -->
+        <ul class="contentList">
+          <li>
+            <strong>Balanced Diet:</strong>
+            <ul>
+              <li>Choose high-quality dog food tailored to your dog's breed and age.</li>
+              <li>Consult with your vet to determine the best feeding schedule.</li>
+              <li>Always provide clean, fresh water.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Consistent Exercise:</strong>
+            <ul>
+              <li>Engage in daily activities such as walks, fetch, and agility training.</li>
+              <li>Ensure your dog gets both physical and mental stimulation.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Health Checkups:</strong>
+            <ul>
+              <li>Visit the vet regularly for health screenings and vaccinations.</li>
+              <li>Stay on top of flea, tick, and heartworm prevention.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Hygiene:</strong>
+            <ul>
+              <li>Brush your dog's coat to keep it healthy and reduce shedding.</li>
+              <li>Bathe your dog with appropriate products and frequency.</li>
+              <li>Regularly clean your dog's ears and trim their nails.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Training and Socialization:</strong>
+            <ul>
+              <li>Enroll in obedience classes or work with a professional trainer.</li>
+              <li>Expose your dog to various environments and other animals.</li>
+              <li>Use positive reinforcement to encourage good behavior.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Dental Hygiene:</strong>
+            <ul>
+              <li>Brush your dog's teeth with dog-safe toothpaste.</li>
+              <li>Offer dental chews to help maintain oral health.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Safe Living Environment:</strong>
+            <ul>
+              <li>Dog-proof your home to prevent accidents and injuries.</li>
+              <li>Provide a cozy, clean sleeping area for your dog.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Mental Enrichment:</strong>
+            <ul>
+              <li>Provide a variety of toys to keep your dog entertained.</li>
+              <li>Rotate toys to keep your dog engaged and interested.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Identification:</strong>
+            <ul>
+              <li>Ensure your dog has a collar with an ID tag.</li>
+              <li>Consider microchipping for added security.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Affection and Attention:</strong>
+            <ul>
+              <li>Spend quality time bonding with your dog daily.</li>
+              <li>Show love and provide a sense of security and belonging.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- FOOTER SECTION -->
+      <div class="footer">
+        <footer>
+          <!-- Link to privacy and disclaimer statement -->
+          <p><a href="Disclaimer.html">Privacy & Disclaimer Statement</a>. SOEN 287 SUMMER II.</p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function updateDateTime() {
+          var now = new Date();
+          var dateString = now.toLocaleDateString();
+          var timeString = now.toLocaleTimeString();
+          document.getElementById('dateTime').textContent = dateString + ' ' + timeString;
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime(); // Initial call to set the date and time immediately
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,3 @@
+PetName:Species:Breed:Age:Description
+Fluffy:Dog:Labrador:3:Friendly and playful
+Whiskers:Cat:Persian:2:Calm and affectionate

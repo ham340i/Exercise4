@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home - The Paws Adoption Center</title>
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="A1_Q8_Stylesheet.css">
+    <!-- Favicon for the webpage -->
+    <link rel="icon" href="titleIMG.png">
+  </head>
+ 
+  <body>
+    <div class="MainBody">
+      <!-- HEADER SECTION -->
+      <div class="header">
+        <header>
+          <table>
+            <tr>
+              <!-- Logo and link to Home page -->
+              <td><a href="/"><img class="headerImage" src="/logo.png" alt="CAT AND DOG IMAGE"></a></td>
+              <!-- Main title and subtitle of the website -->
+              <td class="headerTitle" id="headerText">The Paws Adoption Center<br>
+                <span class="headerSubtitle">Finding Forever Homes, One Paw at a Time</span>
+              </td>
+            </tr>
+          </table>
+          <div id="dateTime"></div> <!-- Date and Time Display -->
+        </header>
+      </div>
+      <!-- SIDE MENU SECTION -->
+      <div class="sideMenu">
+        <p class="menu">Paw Menu</p>
+        <a href="Home.html">Home</a>
+        <a href="create_account.html">Create an Account</a> 
+        <a href="login.html">Log In</a> 
+        <a href="Pets.html">Browse Available Pets</a> 
+        <a href="Find_DOG_CAT.html">Find a Dog/Cat</a>
+        <a href="Dog_Care.html">Dog Care</a>
+        <a href="Cat_Care.html">Cat Care</a>
+        <a href="rehabilitate.html">Have a pet to give away?</a>
+        <a href="Contact_Us.html">Contact Us</a>
+      </div>
+      <!-- MAIN CONTENT SECTION -->
+      <div class="content">
+        <p class="contentHeader">Welcome to The Paws Adoption Center</p>
+        <!-- Image related to the main page, aligned to the right -->
+        <img class="contentImageFloatRight" src="/main_page.jpg" alt="MAIN PAGE IMAGE">
+        <!-- Text content introducing the organization -->
+        <p class="contentText">
+          Welcome to The Paws Adoption Center, where you can count on us to help needy cats and dogs find loving homes. 
+          We want every animal to have the opportunity to live in a loving and nurturing environment, 
+          so we work to match kind families with the ideal pets. Discover more about our simple adoption procedure, 
+          browse our gallery of featured pets, and utilize our advanced search to locate the perfect match. 
+          Take inspiration from our success stories and learn how you can help us achieve our goals by making donations, 
+          offering your time, or fostering. Our helpful staff will be by your side every step of the way if you need 
+          assistance or have any questions. Begin your adventure with The Paws Adoption Center right now and change a pet's life.
+        </p>
+        <!-- Additional text content providing more information about the organization -->
+        <p class="contentText">
+          At The Paws Adoption Center, we take inspiration from our namesake, the goddess of the Earth, and hold a belief in the 
+          harmony and balance between people and animals. The greyhound, our mascot, is a symbol of the essential principles we uphold 
+          because it personifies grace, loyalty, and elegance. Every pet that walks through our doors is given the best possible care and affection, 
+          enabling them to settle into their new homes with ease. Whether you're searching for a cuddly senior dog, an energetic kitten, or anything 
+          in between, our wide range of pets guarantees you'll find the ideal friend.
+        </p>
+        <!-- Information on available pets and how to adopt -->
+        <p class="contentText">
+          Look through our selection of animals <a href="/browse">up for adoption</a>
+          to find the perfect friend. It's simple to submit an adoption form if you have 
+          any special requests or preferences. In order to provide the greatest care possible 
+          for animals in need of <a href="/rehabilitate">rehabilitation and rehoming</a>, 
+          The Paws Adoption Center is dedicated to accepting them.
+        </p>
+      </div>
+      <!-- FOOTER SECTION -->
+      <div class="footer">
+        <footer>
+          <!-- Link to privacy and disclaimer statement -->
+          <p><a href="/privacy">Privacy & Disclaimer Statement</a>. SOEN 287 SUMMER II.</p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function updateDateTime() {
+          var now = new Date();
+          var dateString = now.toLocaleDateString();
+          var timeString = now.toLocaleTimeString();
+          document.getElementById('dateTime').textContent = dateString + ' ' + timeString;
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime(); // Initial call to set the date and time immediately
+    </script>
+  </body>
+</html>

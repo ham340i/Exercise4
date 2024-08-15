@@ -1,0 +1,345 @@
+
+
+/* Main container styling */
+.MainBody {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: #F4F4F9; /* Light Gray background */
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  height: 22%;
+  width: 100%;
+  padding: 0;
+  background-color: #2B2D42; /* Dark Slate Blue background */
+}
+.header table {
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+.headerImage {
+  margin: 0;
+  vertical-align: center;
+  height: 88px;
+  width: 81px;
+  margin-left: 4px;
+  margin-top: 15px;
+}
+.headerTitle {
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF; /* White Text Color */
+  font-size: 2.75rem;
+  line-height: 70%;
+  vertical-align: bottom;
+}
+.headerTitle:hover {
+  color: black;
+}
+.headerSubtitle {
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF; /* White Text */
+  font-size: 1.25rem;
+  vertical-align: bottom;
+}
+.headerSubtitle:hover {
+  color: black;
+}
+.menu:hover {
+  color: black;
+}
+
+/* SIDE MENU */
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  top: 22%; /* Adjusted to start below the header */
+  right: 0;
+  height: 80%;
+  width: 20%;
+  background-color: #8D99AE; /* Cool Gray background */
+  overflow-y: auto;
+}
+.sideMenu p {
+  align-self: center;
+  text-align: center; /* Center the text within the parent container */
+  width: 100%; /* Ensure the width is 100% */
+  padding-left: 10%;
+  font-weight: bold;
+  font-size: 20px;
+  color: #2B2D42; /* Dark Slate Blue Text Color */
+}
+.sideMenu ul {
+  list-style-type: none;
+}
+.sideMenu a {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #2B2D42; /* Dark Slate Blue text */
+  background-color: #EDF2F4; /* Off White background */
+  border-radius: 3px;
+}
+.sideMenu a:hover {
+  color: #FFFFFF;
+  background-color: #2B2D42; /* Dark Slate Blue background */
+}
+.sideMenu a:last-child {
+  margin-bottom: 35px;
+}
+
+/* CONTENT */
+.content {
+  position: absolute;
+  top: 20%;
+  height: 70%;
+  right: 20%;
+  width: 80%;
+  background-color: #EDF2F4; /* Off White background */
+  overflow-y: auto;
+  padding-bottom: 50px; /* Added padding for footer visibility */
+}
+.contentHeader {
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #2B2D42; /* Dark Slate Blue text */
+  font-weight: bold;
+  font-size: 30px;
+}
+.contentText {
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #2B2D42; /* Dark Slate Blue text */
+  font-size: 20px;
+}
+.contentText a {
+  font-style: italic;
+  text-decoration: none;
+  color: #2B2D42; /* Dark Slate Blue text */
+}
+.contentText a:hover {
+  color: #EF233C; /* Crimson Red text */
+}
+.contentTextSmall {
+  font-size: 16px;
+}
+.contentList {
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #2B2D42; /* Dark Slate Blue text */
+  font-size: 20px;
+}
+.contentList li {
+  padding-bottom: 1%;
+}
+.contentList a {
+  text-decoration: none;
+  color: #2B2D42; /* Dark Slate Blue text */
+}
+.contentList a:hover {
+  color: #EF233C; /* Crimson Red text */
+}
+.contentDivider {
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: bold;
+  color: #EF233C; /* Crimson Red text */
+}
+.contentImageFloatRight {
+  float: right;
+  margin-top: -0.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 50%;
+  width: 45%;
+}
+
+.content button {
+  border: none;
+  padding: 10px;
+  margin-left: 5%;
+  color: #FFFFFF;
+  background-color: #EF233C; /* Crimson Red background */
+  font-family: 'Times New Roman', Times, serif;
+}
+.content button:hover {
+  background-color: #D90429; /* Darker Red */
+}
+.formDropdown {
+  margin-left: 5%;
+  color: #2B2D42; /* Dark Slate Blue text */
+}
+.formTextInput {
+  margin-left: 5%;
+}
+#findForm {
+  height: 165%;
+}
+#giveForm {
+  height: 215%;
+}
+#citationsPage {
+  height: 110%;
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  z-index: 3;
+  bottom: 0%;
+  height: 5%;
+  width: 100%;
+  background-color: #2B2D42; /* Dark Slate Blue background */
+  text-align: center;
+}
+.footer p {
+  color: #FFFFFF; /* White text */
+  font-size: 10px;
+}
+.footer p:hover {
+  color: #000000; /* Black text */
+}
+.footer a {
+  color: #FFFFFF; /* White text */
+  text-decoration: underline;
+  font-size: 10px;
+}
+.footer a:hover {
+  color: #000000; /* Black text */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1px;
+  }
+
+  .header table {
+    display: block;
+    text-align: center;
+  }
+
+  .headerImage {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .headerTitle {
+    font-size: 2rem;
+    padding-bottom: 10px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .sideMenu {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding-top: 100px;
+  }
+
+  .sideMenu p, .sideMenu a {
+    font-size: 16px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+  }
+
+  .content {
+    position: static;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .contentImageFloatRight {
+    float: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .footer {
+    position: static;
+    height: auto;
+    padding: 10px;
+  }
+
+  .footer p, .footer a {
+    font-size: 14px;
+  }
+}
+
+ /* Adjust styles for screens 480px and smaller (smartphones) */
+@media (max-width: 400px) {
+  .headerTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .sideMenu p, .sideMenu a {
+    font-size: 14px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .contentText {
+    font-size: 16px;
+  }
+
+  .contentHeader {
+    font-size: 24px;
+  }
+}
+
+/* Ensure images and videos are responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+#dateTime {
+    font-size: 20px;
+    font-weight: bold;
+    color: white; /* Set text color to white */
+    margin-top: 10px;
+}
+.pet {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pet img {
+  max-width: 150px;
+  margin-right: 20px;
+}
+.pet-info {
+  max-width: 600px;
+}
+.pet button {
+  margin-left: 20px;
+  padding: 10px;
+  font-size: 16px;
+}

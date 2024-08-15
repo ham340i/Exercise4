@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Privacy & Disclaimer</title>
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="A1_Q8_Stylesheet.css">
+    <!-- Favicon for the webpage -->
+    <link rel="icon" href="titleIMG.png">
+  </head>
+
+  <body>
+    <div class="MainBody">
+      <!-- HEADER SECTION -->
+      <div class="header">
+        <header>
+          <table>
+            <tr>
+              <!-- Logo and link to Home page -->
+              <td><a href="Home.html"><img class="headerImage" src="logo.png" alt="CAT AND DOG"></a></td>
+              <!-- Main title and subtitle of the website -->
+              <td class="headerTitle" id="headerText">The Paws Adoption Center<br>
+                <span class="headerSubtitle">Finding Forever Homes, One Paw at a Time</span>
+              </td>
+            </tr>
+          </table>
+          <div id="dateTime"></div> <!-- Date and Time Display -->
+        </header>
+      </div>
+      <!-- SIDE MENU SECTION -->
+      <div class="sideMenu">
+        <p class="menu">Paw Menu</p>
+        <a href="Home.html">Home</a>
+        <a href="create_account.html">Create an Account</a> 
+        <a href="login.html">Log In</a> 
+        <a href="Pets.html">Browse Available Pets</a> 
+        <a href="Find_DOG_CAT.html">Find a Dog/Cat</a>
+        <a href="Dog_Care.html">Dog Care</a>
+        <a href="Cat_Care.html">Cat Care</a>
+        <a href="rehabilitate.html">Have a pet to give away?</a>
+        <a href="Contact_Us.html">Contact Us</a>
+      </div>
+      <!-- MAIN CONTENT SECTION -->
+      <div class="content">
+        <p class="contentHeader">Privacy Disclaimer</p>
+        <!-- Text content explaining privacy and disclaimer policy -->
+        <p class="contentText">
+          Our top priority at The Paws Adoption Center is protecting your privacy. 
+          We are dedicated to protecting the privacy and security of your personal data. 
+          You consent to the collection and use of data by us in line with our privacy policy 
+          by using our website. The Paws Adoption Center makes every effort to present accurate 
+          and current information; however, we cannot guarantee that the content is accurate or complete. 
+          Any decisions made in response to the information on this website are not our responsibility. 
+          For more in-depth questions, please get in touch with one of our representatives.
+        </p>
+      </div>
+      <!-- FOOTER SECTION -->
+      <div class="footer">
+        <footer>
+          <!-- Link to privacy and disclaimer statement -->
+          <p><a href="Disclaimer.html">Privacy & Disclaimer Statement</a>. SOEN 287 SUMMER II.</p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function updateDateTime() {
+          var now = new Date();
+          var dateString = now.toLocaleDateString();
+          var timeString = now.toLocaleTimeString();
+          document.getElementById('dateTime').textContent = dateString + ' ' + timeString;
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime(); // Initial call to set the date and time immediately
+  </script>
+  </body>
+</html>

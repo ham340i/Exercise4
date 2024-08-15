@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Find a Dog/Cat - The Paws Adoption Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="A1_Q8_Stylesheet.css">
+    <link rel="icon" href="titleIMG.png">
+  </head>
+
+  <body>
+    <div class="MainBody">
+      <div class="header">
+        <header>
+          <table>
+            <tr>
+              <td><a href="Home.html"><img class="headerImage" src="logo.png" alt="CAT AND DOG"></a></td>
+              <td class="headerTitle" id="headerText">The Paws Adoption Center<br>
+                <span class="headerSubtitle">Finding Forever Homes, One Paw at a Time</span>
+              </td>
+            </tr>
+          </table>
+          <div id="dateTime"></div>
+        </header>
+      </div>
+      <div class="sideMenu">
+        <p class="menu">Paw Menu</p>
+        <a href="Home.html">Home</a>
+        <a href="create_account.html">Create an Account</a> 
+        <a href="login.html">Log In</a> 
+        <a href="Pets.html">Browse Available Pets</a> 
+        <a href="Find_DOG_CAT.html">Find a Dog/Cat</a>
+        <a href="Dog_Care.html">Dog Care</a>
+        <a href="Cat_Care.html">Cat Care</a>
+        <a href="rehabilitate.html">Have a pet to give away?</a>
+        <a href="Contact_Us.html">Contact Us</a>
+      </div>
+      <div class="content" id="findForm">
+        <p class="contentHeader">Find Your Perfect Match</p>
+        <img class="contentImageFloatRight" src="FindaDogCat.jpg" alt="Finding a dog or a cat">
+        <form id="petForm">
+          <label class="contentText">Who are you looking to have as your companion?</label>
+          <br><br>
+          <input type="radio" class="contentText" id="findPetDog" name="findPet" value="dog">
+          <label for="findPetDog">Dog</label>
+          <br>
+          <input type="radio" class="contentText" id="findPetCat" name="findPet" value="cat">
+          <label for="findPetCat">Cat</label>
+          <br><br><br>
+          <label class="contentText">Have a Favorite Breed in Mind?</label>
+          <br><br>
+          <input type="radio" class="contentText" id="findBreedInput" name="findBreed" value="input">
+          <label for="findBreedInput">Please specify: </label><input type="text" id="breedInput">
+          <br>
+          <input type="radio" class="contentText" id="findBreedNone" name="findBreed" value="none">
+          <label for="findBreedNone">No preference</label>
+          <br><br><br>
+          <label class="contentText">What Age are you looking for your companion to be?</label>
+          <br><br>
+          <select name="findAge" class="formDropdown" id="ageSelect">
+            <option value="" selected hidden disabled>Select here.</option>
+            <option value="0to3">0 to 3 years</option>
+            <option value="4to7">4 to 7 years</option>
+            <option value="8to11">8 to 11 years</option>
+            <option value="12to15">12 to 15 years</option>
+            <option value="16plus">16 years and higher</option>
+          </select>
+          <br><br><br>
+          <label class="contentText">Do You Prefer a Specific Gender?</label>
+          <br><br>
+          <input type="radio" class="contentText" id="findGenderMale" name="findGender" value="male">
+          <label for="findGenderMale">Male</label>
+          <br>
+          <input type="radio" class="contentText" id="findGenderFemale" name="findGender" value="female">
+          <label for="findGenderFemale">Female</label>
+          <br>
+          <input type="radio" class="contentText" id="findGenderNone" name="findGender" value="none">
+          <label for="findGenderNone">No preference</label>
+          <br><br><br>
+          <label class="contentText">What personality traits are you looking for your furry companion to have?</label>
+          <br><br>
+          <input type="checkbox" class="contentText" id="findRequirementDogs" name="findRequirement" value="dogs">
+          <label for="findRequirementDogs">Dog-friendly</label>
+          <br>
+          <input type="checkbox" class="contentText" id="findRequirementCats" name="findRequirement" value="cats">
+          <label for="findRequirementCats">Cat-friendly</label>
+          <br>
+          <input type="checkbox" class="contentText" id="findRequirementChildren" name="findRequirement" value="children">
+          <label for="findRequirementChildren">Children-friendly</label>
+          <br><br><br>
+          <button type="submit" id="submit" name="submit">Submit</button>
+          <button type="reset" id="reset" name="reset">Reset</button>
+        </form>
+        <div id="error-message" style="color:red;"></div>
+      </div>
+      <div class="footer">
+        <footer>
+          <p><a href="Disclaimer.html">Privacy & Disclaimer Statement</a>. SOEN 287 SUMMER II.</p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function updateDateTime() {
+        var now = new Date();
+        var dateString = now.toLocaleDateString();
+        var timeString = now.toLocaleTimeString();
+        document.getElementById('dateTime').textContent = dateString + ' ' + timeString;
+      }
+
+      setInterval(updateDateTime, 1000);
+      updateDateTime();
+
+      document.getElementById('petForm').addEventListener('submit', function(event) {
+    let errorMessage = '';
+    const findPet = document.querySelector('input[name="findPet"]:checked');
+    const findBreedInput = document.getElementById('breedInput').value.trim();
+    const findBreed = document.querySelector('input[name="findBreed"]:checked');
+    const ageSelect = document.getElementById('ageSelect').value;
+    const findGender = document.querySelector('input[name="findGender"]:checked');
+    
+    const personalityTraits = document.querySelectorAll('input[name="findRequirement"]:checked');
+
+    if (!findPet) {
+        errorMessage += 'Please select a pet type.\n';
+    }
+
+    if (findBreed && findBreed.value === 'input' && findBreedInput === '') {
+        errorMessage += 'Please specify the breed.\n';
+    }
+
+    if (!findBreed) {
+        errorMessage += 'Please select a breed preference.\n';
+    }
+
+    if (!ageSelect) {
+        errorMessage += 'Please select an age.\n';
+    }
+
+    if (!findGender) {
+        errorMessage += 'Please select a gender preference.\n';
+    }
+
+    if (personalityTraits.length === 0) {
+        errorMessage += 'Please select at least one personality trait.\n';
+    }
+
+    if (errorMessage) {
+        event.preventDefault();
+        alert(errorMessage); // Display the popup with the error messages
+    }
+});
+
+
+    </script>
+  </body>
+</html>
